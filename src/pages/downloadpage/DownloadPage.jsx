@@ -12,7 +12,7 @@ const DownloadPage = () => {
   useEffect(() => {
     const fetchPhones = async () => {
       try {
-        const response = await fetch('/phones.json');
+        const response = await fetch('/hyperOS/phones.json');
         const data = await response.json();
         setPhones(data.phones);
         setFilteredPhones(data.phones);
