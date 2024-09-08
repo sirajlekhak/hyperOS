@@ -15,7 +15,7 @@ const PhoneBuildPage = () => {
   useEffect(() => {
     const fetchPhone = async () => {
       try {
-        const response = await fetch('/phones.json');
+        const response = await fetch('/hyperOS/phones.json');
         const data = await response.json();
         const foundPhone = data.phones.find(p => p.id === parseInt(id, 10)); // Match by id
         setPhone(foundPhone);
