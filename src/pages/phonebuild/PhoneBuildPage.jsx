@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './PhoneBuildPage.css';
 
 const PhoneBuildPage = () => {
-  const { id } = useParams(); // Get the id from the URL
+  const { id } = useParams();
   const [phone, setPhone] = useState(null);
   const [sourceChangelog, setSourceChangelog] = useState('');
   const [changelog, setChangelog] = useState('');
@@ -15,14 +15,17 @@ const PhoneBuildPage = () => {
   useEffect(() => {
     const fetchPhone = async () => {
       try {
-        console.log('Fetching phone data...');
-        const response = await fetch('/hyperOS/phones.json');
+        const response = await fetch('/phones.json');
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
-        console.log('Phone data:', data);
+
         const foundPhone = data.phones.find(p => p.id === parseInt(id, 10));
+        if (!foundPhone) throw new Error('Phone not found');
+
         setPhone(foundPhone);
+
         if (foundPhone) {
+          console.log('Fetching text files for:', foundPhone);
           fetchTextFile(foundPhone.sourceChangelogs, setSourceChangelog);
           fetchTextFile(foundPhone.changelogs, setChangelog);
           fetchTextFile(foundPhone.installationInstructions, setInstallationInstructions);
@@ -31,9 +34,10 @@ const PhoneBuildPage = () => {
         console.error('Error fetching phone data:', error);
       }
     };
-  
+
     const fetchTextFile = async (filePath, setText) => {
       try {
+        console.log('Fetching file:', filePath);
         const response = await fetch(filePath);
         if (!response.ok) throw new Error('Network response was not ok');
         const text = await response.text();
@@ -42,7 +46,7 @@ const PhoneBuildPage = () => {
         console.error('Error fetching text file:', error);
       }
     };
-  
+
     fetchPhone();
   }, [id]);
 
@@ -73,28 +77,25 @@ const PhoneBuildPage = () => {
         )}
       </div>
 
-      {/* Toggle Source Changelog */}
       <div className="changelog-info">
         <button onClick={() => setToggleSourceChangelog(!toggleSourceChangelog)}>
           {toggleSourceChangelog ? 'Hide' : 'Show'} Source Changelog
         </button>
-        {toggleSourceChangelog && <pre>{sourceChangelog}</pre>}
+        {toggleSourceChangelog && <pre>{sourceChangelog || 'No source changelog available.'}</pre>}
       </div>
 
-      {/* Toggle Changelog */}
       <div className="changelog-info">
         <button onClick={() => setToggleChangelog(!toggleChangelog)}>
           {toggleChangelog ? 'Hide' : 'Show'} Changelog
         </button>
-        {toggleChangelog && <pre>{changelog}</pre>}
+        {toggleChangelog && <pre>{changelog || 'No changelog available.'}</pre>}
       </div>
 
-      {/* Toggle Installation Instructions */}
       <div className="changelog-info">
         <button onClick={() => setToggleInstructions(!toggleInstructions)}>
           {toggleInstructions ? 'Hide' : 'Show'} Installation Instructions
         </button>
-        {toggleInstructions && <pre>{installationInstructions}</pre>}
+        {toggleInstructions && <pre>{installationInstructions || 'No instructions available.'}</pre>}
       </div>
 
       <div className="support-us">

@@ -10,7 +10,7 @@ import BlogPage from './pages/blog/BlogPage'; // Import BlogPage
 
 const App = () => {
   return (
-    <Router basename="/hyperOS">
+    <Router basename="/">
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

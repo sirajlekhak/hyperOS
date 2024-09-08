@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  base: '/hyperOS/', // Update this to your repository name
+  base: '/', // Update this to your repository name
   plugins: [
     react(),
     VitePWA({

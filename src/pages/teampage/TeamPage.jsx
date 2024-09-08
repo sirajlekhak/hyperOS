@@ -12,7 +12,7 @@ const TeamPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/hyperOS/developers.json');
+        const response = await fetch('/developers.json');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
