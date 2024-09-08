@@ -17,7 +17,7 @@ body {
     justify-content: center; /* Center elements vertically */
     align-items: center; /* Center elements horizontally */
     width: 100vw; /* Use viewport width to avoid overflow */
-    height: 100vh;
+    height: 100%;
     padding: 20px;
     text-align: center; /* Center text */
     box-sizing: border-box;
@@ -175,9 +175,6 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .phone-build-page {
-    margin-top: -80px;
-  }
   .changelog-info pre, 
   .installation-instructions pre {
     font-size: 12px; /* Adjust font size for smaller screens */
