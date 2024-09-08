@@ -15,11 +15,13 @@ const PhoneBuildPage = () => {
   useEffect(() => {
     const fetchPhone = async () => {
       try {
+        console.log('Fetching phone data...');
         const response = await fetch('/hyperOS/phones.json');
+        if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
-        const foundPhone = data.phones.find(p => p.id === parseInt(id, 10)); // Match by id
+        console.log('Phone data:', data);
+        const foundPhone = data.phones.find(p => p.id === parseInt(id, 10));
         setPhone(foundPhone);
-        // Fetch changelogs and instructions
         if (foundPhone) {
           fetchTextFile(foundPhone.sourceChangelogs, setSourceChangelog);
           fetchTextFile(foundPhone.changelogs, setChangelog);
@@ -29,17 +31,18 @@ const PhoneBuildPage = () => {
         console.error('Error fetching phone data:', error);
       }
     };
-
+  
     const fetchTextFile = async (filePath, setText) => {
       try {
         const response = await fetch(filePath);
+        if (!response.ok) throw new Error('Network response was not ok');
         const text = await response.text();
         setText(text);
       } catch (error) {
         console.error('Error fetching text file:', error);
       }
     };
-
+  
     fetchPhone();
   }, [id]);
 
