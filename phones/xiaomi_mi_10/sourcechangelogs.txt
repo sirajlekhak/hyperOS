@@ -1,0 +1,24 @@
+# Poco M2 Pro Source Changelog
+
+## Version 1.0.0 - Initial Release
+- Added support for Poco M2 Pro.
+- Implemented basic features and functionalities.
+- Optimized performance and stability.
+- Included initial device tree configuration.
+
+## Version 1.1.0 - Minor Updates
+- Fixed issues with Wi-Fi connectivity.
+- Improved battery performance.
+- Updated kernel with security patches.
+- Added additional debugging tools.
+
+## Version 1.2.0 - New Features
+- Added support for 5G networks.
+- Enhanced camera functionality.
+- Included latest security patches.
+- Improved user interface and experience.
+
+## Version 1.3.0 - Bug Fixes
+- Fixed bugs related to Bluetooth connectivity.
+- Resolved issues with app crashes.
+- Enhanced overall system stability.
