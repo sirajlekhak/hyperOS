@@ -12,14 +12,7 @@ html, body {
 }
 
 /* Navbar */
-.navbar {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000; /* Ensure it sits above other content */
-  padding: 10px 20px; /* Padding inside navbar */
-}
+
 
 /* Main Container */
 .main-container {
@@ -27,4 +20,3 @@ html, body {
   min-height: 100vh; /* Full viewport height */
   box-sizing: border-box;
 }
-

@@ -85,6 +85,7 @@ body {
 
 /* Breadcrumb Menu for Mobile */
 .breadcrumb-menu {
+  z-index: 10001;
   display: flex;
   align-items: center;
   position: relative;
@@ -140,7 +141,21 @@ body {
     display: none;
   }
 
+  .navbar-logo {
+    margin-left: -20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo .logo-image {
+    height: 30px;
+    margin-bottom: -4px;
+    margin-right: 10px;
+  }
+
   .breadcrumb-menu {
+   margin-left: 20px;
     display: flex;
   }
   
@@ -148,6 +163,18 @@ body {
 
 /* Media query to hide the text at 400px or below */
 @media (max-width: 400px) {
+  .navbar-logo {
+    padding: 5px;
+    margin-left: -30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb-menu {
+    margin-right: -20px;
+     display: flex;
+   }
+
   .navbar-logo h1 {
     display: none; /* Hide the Xiaomi HyperOS text */
   }

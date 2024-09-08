@@ -1,0 +1,40 @@
+/* src/pages/blogpage/BlogPage.css */
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf5e6;
+    overflow-x: hidden; /* Hide overflow for the entire page */
+  }
+  
+  .blog-page {
+    display: flex;
+    flex-direction: column; /* Align elements vertically */
+    justify-content: center; /* Center elements vertically */
+    align-items: center; /* Center elements horizontally */
+    width: 100vw; /* Use viewport width to avoid overflow */
+    height: 100vh;
+    padding: 20px;
+    text-align: center; /* Center text */
+    box-sizing: border-box;
+    position: relative; /* Ensure that positioning is relative to this container */
+    overflow: hidden; /* Hide overflow within the main content */
+  }
+  
+  .blog-page h1 {
+    color: rgb(36, 36, 36);
+    margin-bottom: 20px;
+    font-size: 3rem;
+  }
+  
+  .blog-page p {
+    margin: 0 auto; /* Center the description */
+    max-width: 800px; /* Adjust max-width for larger screens */
+    font-style: italic;
+    font-weight: 500;
+    color: rgb(36, 36, 36);
+    margin-bottom: 20px;
+  }
+  

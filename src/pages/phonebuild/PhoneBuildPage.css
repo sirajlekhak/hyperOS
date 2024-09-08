@@ -1,12 +1,29 @@
 /* Main Container */
-.phone-build-page {
-  border-radius: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 20px;
-  max-width: 900px;
-  background-color: #ffffff; /* White background for a clean look */
-  color: #333; /* Dark text color for readability */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #faf2e6; /* Changed background to match the design */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
 }
+
+
+.phone-build-page {
+  display: flex;
+    flex-direction: column; /* Align elements vertically */
+    justify-content: center; /* Center elements vertically */
+    align-items: center; /* Center elements horizontally */
+    width: 100vw; /* Use viewport width to avoid overflow */
+    height: 100vh;
+    padding: 20px;
+    text-align: center; /* Center text */
+    box-sizing: border-box;
+    position: relative; /* Ensure that positioning is relative to this container */
+    overflow: hidden; /* Hide overflow within the main content */
+  }
 
 /* General Information Boxes */
 .phone-info-box,
@@ -158,6 +175,9 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .phone-build-page {
+    margin-top: -80px;
+  }
   .changelog-info pre, 
   .installation-instructions pre {
     font-size: 12px; /* Adjust font size for smaller screens */

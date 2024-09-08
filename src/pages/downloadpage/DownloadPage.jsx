@@ -42,6 +42,7 @@ const DownloadPage = () => {
   };
 
   return (
+    <div className="main">
     <div className="download-page">
       <h1>Download HyperOS Builds</h1>
       <div className="brand-filter">
@@ -72,6 +73,7 @@ const DownloadPage = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

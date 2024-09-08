@@ -1,35 +1,24 @@
 /* General Styles */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #faf2e6; /* Changed background to match the design */
-  margin: 0;
+  height: 100%; /* Ensure full height for the document */
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #333;
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  min-height: 100vh;
+  overflow-y: auto; /* Ensure scrolling when content exceeds viewport */
 }
 
 .download-page {
-  margin-top: 70px;
-  max-width: 1600px;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 40px 10px; /* Increase padding at the top */
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Headings */
-h1 {
-  text-align: center;
-  color: #1d1d1f;
-  font-size: 3rem;
-  margin-bottom: 30px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  line-height: 1.3;
+.download-page h1 {
+  color: rgb(36, 36, 36);
+  margin-bottom: 20px;
 }
 
 /* Brand Filter */
@@ -90,12 +79,10 @@ h1 {
 
 /* Phone Grid */
 .phone-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  padding: 25px;
-  width: 100%;
-  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Add gap between cards */
 }
 
 .phone-card {

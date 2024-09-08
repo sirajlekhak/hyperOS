@@ -13,6 +13,7 @@ body {
 }
 
 .team-container {
+  overflow: scroll;
   padding: 40px 10px; /* Increase padding at the top */
   max-width: 90%;
   margin: 0 auto;
@@ -20,7 +21,6 @@ body {
 }
 
 .team-container h1 {
-  margin-top: 7%;
   color: rgb(36, 36, 36);
   margin-bottom: 20px;
 }
@@ -128,7 +128,6 @@ body {
 @media (max-width: 1024px) {
   .team-container h1 {
     font-size: 2.5rem; /* Adjust font size */
-    margin-top: 9%;
   }
 
   .team-description {
@@ -153,7 +152,6 @@ body {
 /* Very small screens */
 @media (max-width: 720px) {
   .team-container h1 {
-    margin-top: 20%;
     font-size: 35px; /* Further adjust font size */
   }
 
