@@ -1,0 +1,44 @@
+# Poco M2 Pro ROM Installation Instructions
+
+## Prerequisites
+- Ensure your device is fully charged.
+- Backup all your data before proceeding.
+- Download the ROM and recovery files from the provided links.
+
+## Steps to Install
+
+1. **Download ROM and Recovery Files**
+   - Download the ROM file from the [ROM download link].
+   - Download the custom recovery file from the [Recovery download link].
+
+2. **Boot into Recovery Mode**
+   - Power off your device.
+   - Press and hold the Volume Up + Power buttons until the recovery menu appears.
+
+3. **Install Custom Recovery**
+   - In the recovery menu, select "Install" or "Install ZIP."
+   - Locate and select the custom recovery file you downloaded.
+   - Confirm and wait for the installation to complete.
+
+4. **Install the ROM**
+   - Return to the main menu in recovery mode.
+   - Select "Install" or "Install ZIP."
+   - Locate and select the ROM file you downloaded.
+   - Confirm and wait for the installation to complete.
+
+5. **Wipe Cache**
+   - In the recovery menu, select "Wipe cache" and confirm.
+   - Optionally, wipe Dalvik cache to ensure clean installation.
+
+6. **Reboot**
+   - Return to the main menu.
+   - Select "Reboot system now."
+   - Your device will restart with the new ROM installed.
+
+## Troubleshooting
+- If you encounter any issues, ensure that the ROM and recovery files are compatible with your device model.
+- Consult the [FAQ](#) or visit the [support forum](#) for additional help.
+
+## Additional Notes
+- Installation of custom ROMs may void your device warranty.
+- Follow the instructions carefully to avoid bricking your device.

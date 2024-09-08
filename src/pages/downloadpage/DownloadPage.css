@@ -1,0 +1,201 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #faf2e6; /* Changed background to match the design */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.download-page {
+  margin-top: 70px;
+  max-width: 1600px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  color: #1d1d1f;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+/* Brand Filter */
+.brand-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.brand-filter button {
+  background-color: #ffffff;
+  border: 2px solid #0078d4;
+  color: #0078d4;
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.brand-filter button.active {
+  background-color: #0078d4;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.brand-filter button:hover {
+  background-color: #005bb5;
+  color: #ffffff;
+  transform: translateY(-4px);
+}
+
+/* Responsive Adjustments for Tablets */
+@media (max-width: 768px) {
+  .brand-filter {
+    gap: 10px;
+  }
+
+  .brand-filter button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 546px) {
+  .brand-filter {
+    gap: 8px;
+  }
+
+  .brand-filter button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
+
+/* Phone Grid */
+.phone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.phone-card {
+  background-color: #fff7e8; /* Updated background color */
+  border-radius: 16px; /* Slightly more rounded */
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  position: relative;
+  border: 1px solid #e0d2b0;
+}
+
+.phone-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Softer shadow on hover */
+}
+
+.phone-image {
+  opacity: 0.9;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: #2b2b2b; /* Softer color */
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+p {
+  color: #555555;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+/* Get Build Button */
+.get-build-button {
+  background-color: transparent; /* Make the background transparent for the stroke to stand out */
+  color: #007bff; /* Professional blue text */
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  margin-top: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #007bff; /* Stroke effect */
+}
+
+.get-build-button:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+  border: 2px solid #0056d2; /* Darker blue stroke on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.get-build-button i {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.get-build-button:hover i {
+  transform: rotate(360deg);
+}
+
+
+
+
+/* Responsive Adjustments for Medium Screens */
+@media (max-width: 900px) {
+  .phone-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+}
+
+/* Single Column for Mobile Screens */
+@media (max-width: 546px) {
+  .phone-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  
+}

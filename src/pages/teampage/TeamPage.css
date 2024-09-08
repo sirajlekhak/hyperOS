@@ -1,0 +1,209 @@
+/* src/pages/TeamPage.css */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%; /* Ensure full height for the document */
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  min-height: 100vh;
+  overflow-y: auto; /* Ensure scrolling when content exceeds viewport */
+}
+
+.team-container {
+  padding: 40px 10px; /* Increase padding at the top */
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-container h1 {
+  margin-top: 7%;
+  color: rgb(36, 36, 36);
+  margin-bottom: 20px;
+}
+
+.team-description {
+  margin: 0 auto; /* Center the description */
+  width: 90%;
+  max-width: 800px; /* Adjust max-width for larger screens */
+  font-style: italic;
+  font-weight: 500;
+  color: rgb(36, 36, 36);
+  margin-bottom: 20px;
+}
+
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Add gap between cards */
+}
+
+.team-card {
+  align-items: center;
+  background: #fffff8;
+  border: 2.5px solid #161616;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.team-avatar {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.team-card h2 {
+  color: #000;
+  margin: 10px 0;
+}
+
+.team-card p {
+  color: #333;
+  margin: 10px 0;
+  font-size: 14px;
+  max-width: 180px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover p {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  opacity: 1;
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.icon-link {
+  color: #070707;
+  padding: 5px;
+  font-size: 24px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-link:hover {
+  color: #000000;
+  transform: scale(1.2);
+}
+
+.telegram-link {
+  color: #0088cc;
+}
+
+.telegram-link:hover {
+  color: #006994;
+}
+
+/* Responsive Adjustments */
+
+/* Tablets and smaller screens */
+@media (max-width: 1024px) {
+  .team-container h1 {
+    font-size: 2.5rem; /* Adjust font size */
+    margin-top: 9%;
+  }
+
+  .team-description {
+    width: 90%; /* Ensure full width on smaller screens */
+    font-size: 1.1rem; /* Adjust font size */
+  }
+
+  .team-card {
+    width: 180px; /* Adjust card width */
+    padding: 15px; /* Adjust padding */
+    height: 280px; /* Adjust height */
+  }
+
+  .team-avatar {
+    width: 80px; /* Adjust avatar size */
+    height: 80px;
+  }
+}
+
+
+
+/* Very small screens */
+@media (max-width: 720px) {
+  .team-container h1 {
+    margin-top: 20%;
+    font-size: 35px; /* Further adjust font size */
+  }
+
+
+
+  .team-card {
+    align-items: center;
+    width: 100%; /* Full width for cards */
+    max-width: 280px; /* Maximum width */
+    padding: 10px; /* Adjust padding */
+    height: auto; /* Adjust height */
+  }
+
+  .team-avatar {
+    width: 60px; /* Further adjust avatar size */
+    height: 60px;
+  }
+
+  .team-card p {
+  color: #333;
+  margin: 10px 0;
+  font-size: 14px;
+  max-width: 180px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: opacity 0.3s ease;
+}
+}
+
+/* src/pages/TeamPage.css */
+
+/* Back to Top Button */
+.back-to-top-button {
+  position: fixed; /* Fix the position relative to the viewport */
+  bottom: 20px; /* Position it 20px from the bottom */
+  right: 20px; /* Position it 20px from the right */
+  background-color: #007bff; /* Primary color */
+  color: #fff; /* Text color */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears on top of other content */
+  transition: background-color 0.3s ease;
+}
+
+.back-to-top-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+

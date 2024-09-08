@@ -1,0 +1,187 @@
+/* Main Container */
+.phone-build-page {
+  margin-top: 200px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  max-width: 900px;
+  background-color: #ffffff; /* White background for a clean look */
+  color: #333; /* Dark text color for readability */
+}
+
+/* General Information Boxes */
+.phone-info-box,
+.status-info {
+  border: 1px solid #e0e0e0; /* Light border for subtlety */
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f0f8ff; /* Light, calming blue for information boxes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.phone-info-box p,
+.status-info p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+.phone-info-box a,
+.status-info a {
+  color: #007bff; /* Trustworthy blue for links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.phone-info-box a:hover,
+.status-info a:hover {
+  text-decoration: underline;
+  color: #0056b3; /* Darker blue for hover effect */
+}
+
+/* Download Buttons */
+.download-buttons {
+  display: flex;
+ 
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.download-button {
+  display: block;
+  padding: 15px 25px;
+  color: #fff; /* White text for buttons */
+  background-color: #007bff; /* Trust-inducing blue for primary actions */
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for buttons */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.download-button:hover {
+  background-color: #0056b3; /* Darker blue for hover */
+  color: #fff;
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Changelog and Code Snippets */
+.changelog-info {
+  margin-bottom: 20px;
+}
+
+.changelog-info pre {
+  background-color: #f1f1f1; /* Light gray background */
+  border: 1px solid #dcdcdc; /* Light border */
+  padding: 15px;
+  border-radius: 12px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  color: #333; /* Dark text for readability */
+}
+
+.changelog-info code {
+  background-color: #e7e7e7; /* Slightly darker gray for code snippets */
+  color: #d63384; /* Highlighted pink for emphasis */
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+/* Support Us Section */
+.support-us {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 12px;
+  background-color: #e7f5ff; /* Soft blue background for support section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.support-us h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Dark text color */
+}
+
+.support-us p {
+  margin: 0 0 15px;
+  color: #666; /* Lighter text color */
+}
+
+.support-button {
+  display: inline-block;
+  padding: 15px 25px;
+  color: #fff; /* White text for button */
+  background-color: #28a745; /* Green for positive action and support */
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.support-button:hover {
+  background-color: #218838; /* Darker green for hover */
+  color: #fff;
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Installation Instructions */
+.installation-instructions pre {
+  background-color: #f1f1f1; /* Light gray background */
+  border: 1px solid #dcdcdc; /* Light border */
+  padding: 15px;
+  border-radius: 12px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+.installation-instructions code {
+  background-color: #e7e7e7; /* Slightly darker gray for code snippets */
+  color: #d63384; /* Highlighted pink for emphasis */
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .changelog-info pre, 
+  .installation-instructions pre {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
+  .download-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .download-button,
+  .support-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .phone-info-box,
+  .status-info {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .phone-info-box p,
+  .status-info p {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
