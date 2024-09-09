@@ -1,24 +1,21 @@
-# Poco M2 Pro ROM Changelog
+Changelog for POCO M2 Pro / Redmi Note 9S / Redmi Note 9 Pro / Redmi Note 9 Pro Max / Redmi Note 10 Lite
 
-## Version 1.0.0 - Initial Release
-- Initial release of the ROM for Poco M2 Pro.
-- Base features: customizations, stability improvements.
-- Initial integration with latest Android security updates.
+Version: Global_1.0.8.0
+Build Date: 04.09.2024
 
-## Version 1.1.0 - Bug Fixes and Improvements
-- Resolved issues with system lag.
-- Improved battery life.
-- Added new customization options in settings.
-- Minor UI tweaks and enhancements.
+- **New Features**:
+  - Added support for advanced camera modes
+  - Enhanced user interface for better accessibility
 
-## Version 1.2.0 - Feature Update
-- Introduced new themes and wallpapers.
-- Enhanced performance with optimized kernel.
-- Added support for advanced camera features.
-- Improved app launch speed and responsiveness.
+- **Bug Fixes**:
+  - Fixed random reboots experienced by some users
+  - Addressed issues with app crashes on startup
 
-## Version 1.3.0 - Major Update
-- Added support for the latest Android version.
-- Comprehensive UI redesign with modern elements.
-- New features: split-screen multitasking, improved notifications.
-- Fixed known issues and bugs from previous versions.
+- **Performance Improvements**:
+  - Improved system stability and speed
+  - Optimized memory usage
+
+- **Security Updates**:
+  - Integrated the latest security patches from Android
+
+For more information and updates, visit [GitHub Repository](https://github.com/Rohan0757) or join the [Telegram Channel](https://t.me/rohanmathur757).

@@ -1,24 +1,13 @@
-# Poco M2 Pro Source Changelog
+Source Changelogs for POCO M2 Pro / Redmi Note 9S / Redmi Note 9 Pro / Redmi Note 9 Pro Max / Redmi Note 10 Lite
 
-## Version 1.0.0 - Initial Release
-- Added support for Poco M2 Pro.
-- Implemented basic features and functionalities.
-- Optimized performance and stability.
-- Included initial device tree configuration.
+Version: Global_1.0.8.0
+Build Date: 04.09.2024
 
-## Version 1.1.0 - Minor Updates
-- Fixed issues with Wi-Fi connectivity.
-- Improved battery performance.
-- Updated kernel with security patches.
-- Added additional debugging tools.
+- **Added**: Support for additional camera features
+- **Improved**: Battery performance and power management
+- **Fixed**: Issues with Wi-Fi connectivity
+- **Updated**: Security patches to the latest release
+- **Optimized**: System UI and responsiveness
+- **Removed**: Legacy features no longer supported
 
-## Version 1.2.0 - New Features
-- Added support for 5G networks.
-- Enhanced camera functionality.
-- Included latest security patches.
-- Improved user interface and experience.
-
-## Version 1.3.0 - Bug Fixes
-- Fixed bugs related to Bluetooth connectivity.
-- Resolved issues with app crashes.
-- Enhanced overall system stability.
+For a detailed list of changes and contributions, please check the [GitHub Repository](https://github.com/Rohan0757).

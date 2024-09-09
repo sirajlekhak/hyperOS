@@ -10,6 +10,7 @@ body {
 }
 
 .main-content {
+  margin-bottom: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;

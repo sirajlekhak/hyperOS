@@ -8,11 +8,17 @@ body {
   overflow-y: auto; /* Ensure scrolling when content exceeds viewport */
 }
 
-.download-page {
-  padding: 40px 10px; /* Increase padding at the top */
-  max-width: 90%;
-  margin: 0 auto;
-  text-align: center;
+.main {
+  flex-direction: column; /* Align elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  width: 100vw; /* Use viewport width to avoid overflow */
+  height: auto;
+  padding: 20px;
+  text-align: center; /* Center text */
+  box-sizing: border-box;
+  position: relative; /* Ensure that positioning is relative to this container */
+
 }
 
 /* Headings */
@@ -50,7 +56,7 @@ body {
 .brand-filter button:hover {
   background-color: #005bb5;
   color: #ffffff;
-  transform: translateY(-4px);
+  transform: translateY(-4px); /* Hover lift effect */
 }
 
 /* Responsive Adjustments for Tablets */
@@ -79,13 +85,16 @@ body {
 
 /* Phone Grid */
 .phone-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with flexible columns */
   gap: 20px; /* Add gap between cards */
+  justify-content: center;
 }
 
+/* Phone Card */
 .phone-card {
+  height: auto;
+  width: 300px;
   background-color: #fff7e8; /* Updated background color */
   border-radius: 16px; /* Slightly more rounded */
   padding: 25px;
@@ -112,6 +121,7 @@ body {
   margin-bottom: 15px;
 }
 
+/* Phone Title */
 h2 {
   font-size: 1.4rem;
   color: #2b2b2b; /* Softer color */
@@ -119,6 +129,7 @@ h2 {
   font-weight: 600;
 }
 
+/* Phone Description */
 p {
   color: #555555;
   font-size: 18px;
@@ -159,30 +170,23 @@ p {
 }
 
 .get-build-button:hover i {
-  transform: rotate(360deg);
+  transform: rotate(360deg); /* Icon rotation on hover */
 }
-
-
-
 
 /* Responsive Adjustments for Medium Screens */
 @media (max-width: 900px) {
   .phone-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
   }
-
-
 }
 
 /* Single Column for Mobile Screens */
 @media (max-width: 546px) {
   .phone-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 column on small screens */
   }
 
   h2 {
     font-size: 1.2rem;
   }
-
-  
 }

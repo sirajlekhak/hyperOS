@@ -7,6 +7,7 @@ import TeamPage from './pages/teampage/TeamPage';
 import DownloadPage from './pages/downloadpage/DownloadPage';
 import PhoneBuildPage from './pages/phonebuild/PhoneBuildPage';
 import BlogPage from './pages/blog/BlogPage'; // Import BlogPage
+import Footer from './components/footer';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/builds/:id" element={<PhoneBuildPage />} />
         <Route path="/blog" element={<BlogPage />} /> {/* Add route for BlogPage */}
       </Routes>
+      <Footer/>
     </Router>
   );
 };

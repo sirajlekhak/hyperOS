@@ -44,11 +44,11 @@ const TeamPage = () => {
             <h2>{dev.name || dev.login}</h2>
             <p className="bio">{dev.bio || 'No bio available'}</p>
             <div className="links-container">
-              <a href={dev.html_url} target="_blank" rel="noopener noreferrer" className="team-link icon-link">
+              <a href={dev.githublink} target="_blank" rel="noopener noreferrer" className="team-link icon-link">
                 <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
-              {dev.telegram_url && (
-                <a href={dev.telegram_url} target="_blank" rel="noopener noreferrer" className="team-link telegram-link icon-link">
+              {dev.telegramlink && (
+                <a href={dev.telegramlink} target="_blank" rel="noopener noreferrer" className="team-link telegram-link icon-link">
                   <FontAwesomeIcon icon={faTelegram} size="2x" />
                 </a>
               )}

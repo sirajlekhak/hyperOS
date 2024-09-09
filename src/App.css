@@ -16,7 +16,7 @@ html, body {
 
 /* Main Container */
 .main-container {
-  padding-top: 60px; /* Adjust for fixed navbar height */
-  min-height: 100vh; /* Full viewport height */
-  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }

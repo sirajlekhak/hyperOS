@@ -62,10 +62,13 @@ const PhoneBuildPage = () => {
     <div className="phone-build-page">
       <h1>{phone.name} - Build Downloads</h1>
       <div className="phone-info-box">
-        <p><strong>Codename:</strong> {phone.codename}</p>
-        <p><strong>Maintainer:</strong> {phone.maintainer}</p>
-        <a href={phone.telegramLink}>Telegram</a> | <a href={phone.githubLink}>GitHub</a>
-      </div>
+  <p><strong>Codename:</strong> {phone.codename}</p>
+  <p><strong>Maintainer:</strong> {phone.maintainer}</p>
+  <p><strong>Version:</strong> {phone.version}</p> {/* Display version */}
+  <p><strong>Build date:</strong> {phone.build_date}</p> {/* Display release cycle */}
+  <a href={phone.telegramLink}>Telegram</a> | <a href={phone.githubLink}>GitHub</a>
+</div>
+
 
       <div className="download-buttons">
         <a href={phone.recoveryDownload} className="download-button">

@@ -13,11 +13,15 @@ body {
 }
 
 .team-container {
-  overflow: scroll;
-  padding: 40px 10px; /* Increase padding at the top */
-  max-width: 90%;
-  margin: 0 auto;
-  text-align: center;
+  flex-direction: column; /* Align elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  width: 100vw; /* Use viewport width to avoid overflow */
+  height: auto;
+  padding: 20px;
+  text-align: center; /* Center text */
+  box-sizing: border-box;
+  position: relative; /* Ensure that positioning is relative to this container */
 }
 
 .team-container h1 {

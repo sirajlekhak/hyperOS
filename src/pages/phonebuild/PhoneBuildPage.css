@@ -38,6 +38,7 @@ body {
 
 .phone-info-box p,
 .status-info p {
+  text-align: start;
   margin: 0 0 10px;
   line-height: 1.6;
 }
