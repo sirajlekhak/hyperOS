@@ -20,13 +20,12 @@ Ensure you follow the structure below when submitting details for a new ROM:
   "codename": "device_codename",
   "brand": "Device Brand",
   "maintainer": "Your Name",
-  "recoveryDownload": "/downloads/device_codename_recovery.zip",
-  "romDownload": "/downloads/device_codename_rom.zip",
-  "previousRomDownload": "/downloads/device_codename_previous_rom.zip",
+  "recoveryDownload": "link to recovery",
+  "romDownload": "link to your custom rom",
+  "previousRomDownload": "link to your archive or previous version download",
   "status": "active",
   "version": "ROM version number",
-  "release": "Release schedule (e.g., monthly)",
-  "latestBuild": "/downloads/device_codename_latest_rom.zip",
+  "release": "Release schedule (e.g., monthly, weekly)",
   "telegramLink": "https://t.me/device_codename",
   "githubLink": "https://github.com/your_repo",
   "sourceChangelogs": "/phones/device_codename/sourcechangelogs.txt",
@@ -42,9 +41,11 @@ Make sure to provide the following **text files**:
 
 ## Contact & Support
 
-For queries, support, or to discuss development, join the official Telegram groups:
+For queries, support, or to discuss development, join the official Telegram groups or Dm me:
 
-- **[Rohan's Discussion](https://t.me/Rohanupdates)** 
+- **[Rohan's Discussion](https://t.me/Rohanupdates)**
+- **[MsN's ChatHub | Miatoll](https://t.me/PortRomsbyMsn)** 
+- **[Siraj Alam](https://t.me/sirajlekhak)** 
 
 ## Support Us
 
