@@ -16,16 +16,18 @@ Ensure you follow the structure below when submitting details for a new ROM:
 
 ```json
 {
+  "id": "not needed",
   "name": "Device Name",
   "codename": "device_codename",
   "brand": "Device Brand",
   "maintainer": "Your Name",
+  "image": "not needed",
   "recoveryDownload": "link to recovery",
   "romDownload": "link to your custom rom",
-  "previousRomDownload": "link to your archive or previous version download",
+  "previousRomDownload": "link to your archive or previous version download not recommended",
   "status": "active",
   "version": "ROM version number",
-  "release": "Release schedule (e.g., monthly, weekly)",
+  "build_date": "Release schedule (e.g., monthly, weekly)",
   "telegramLink": "https://t.me/device_codename",
   "githubLink": "https://github.com/your_repo",
   "sourceChangelogs": "/phones/device_codename/sourcechangelogs.txt",
