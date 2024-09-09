@@ -3,23 +3,9 @@
 This repository hosts the details and resources for custom/ported ROMs available for various Android devices. It includes download links, changelogs, and installation instructions for each supported device.
 
 ## Table of Contents
-- [Supported Devices](#supported-devices)
 - [How to Contribute](#how-to-contribute)
-- [Changelog](#changelog)
-- [Installation Instructions](#installation-instructions)
 - [Contact & Support](#contact--support)
 - [Support Us](#support-us)
-
-## Supported Devices
-
-Below are the currently supported devices along with their respective codenames:
-
-| Device Name         | Codename  | Maintainer        | ROM Version | Status   |
-|---------------------|-----------|-------------------|-------------|----------|
-| POCO M2 Pro / Redmi Note 9S / Redmi Note 9 Pro / Redmi Note 9 Pro Max / Redmi Note 10 Lite       | mi_10     | Alice Johnson     | 2.1.0       | Active   |
-<!-- Add more devices as needed -->
-
-For each device, download links, changelogs, and installation instructions are provided.
 
 ## How to Contribute
 
@@ -54,26 +40,11 @@ Make sure to provide the following **text files**:
 - **`changelogs.txt`**: A general changelog for the ROM.
 - **`installation_instructions.txt`**: Installation steps for the ROM.
 
-## Changelog
-
-For a complete list of changes made to each ROM, please refer to the `changelogs.txt` provided for each device.
-
-- **[Xiaomi Mi 10 Changelog](./phones/xiaomi_mi_10/changelogs.txt)**
-<!-- Add more device-specific changelog links here -->
-
-## Installation Instructions
-
-To install the ROM on your device, follow the steps provided in the `installation_instructions.txt` for your device.
-
-- **[Xiaomi Mi 10 Installation Instructions](./phones/xiaomi_mi_10/installation_instructions.txt)**
-<!-- Add more device-specific instruction links here -->
-
 ## Contact & Support
 
-For queries, support, or to discuss development, join the official Telegram groups or visit the GitHub repository for each device:
+For queries, support, or to discuss development, join the official Telegram groups:
 
-- **[Xiaomi Mi 10 Telegram Group](https://t.me/xiaomi_mi_10)**  
-- **[Xiaomi Mi 10 GitHub Repository](https://github.com/xiaomi/mi_10)**
+- **[Rohan's Discussion](https://t.me/Rohanupdates)** 
 
 ## Support Us
 
