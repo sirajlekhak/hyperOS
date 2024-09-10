@@ -25,6 +25,11 @@ body {
     overflow: hidden; /* Hide overflow within the main content */
   }
 
+  .phone-build-page h1 {
+    flex-wrap: wrap;
+  font-size: 2.5rem;
+  }
+
 /* General Information Boxes */
 .phone-info-box,
 .status-info {

@@ -71,14 +71,14 @@ const PhoneBuildPage = () => {
 
 
       <div className="download-buttons">
-        <a href={phone.recoveryDownload} className="download-button">
+        <a href={phone.recoveryDownload} className="download-button" target="_blank">
           <i className="fas fa-download"></i> Download Recovery
         </a>
-        <a href={phone.romDownload} className="download-button">
+        <a href={phone.romDownload} className="download-button" target="_blank">
           <i className="fas fa-download"></i> Download ROM
         </a>
         {phone.previousRomDownload && (
-          <a href={phone.previousRomDownload} className="download-button">
+          <a href={phone.previousRomDownload} className="download-button" target="_blank">
             <i className="fas fa-download"></i> Download Archive
           </a>
         )}
@@ -108,7 +108,7 @@ const PhoneBuildPage = () => {
       <div className="support-us">
         <h2>Support Us</h2>
         <p>If you'd like to support our work, you can do so via UPI.</p>
-        <a href="upi://pay?pa=YOUR_UPI_ID&pn=YOUR_NAME" className="support-button">Donate via UPI</a>
+        <a href="upi://pay?pa=crajmusics@oksbi&pn=Siraj_Alam" className="support-button" target="_blank">Donate via UPI</a>
       </div>
     </div>
   );
