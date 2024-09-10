@@ -66,7 +66,7 @@ const PhoneBuildPage = () => {
   <p><strong>Maintainer:</strong> {phone.maintainer}</p>
   <p><strong>Version:</strong> {phone.version}</p> {/* Display version */}
   <p><strong>Build date:</strong> {phone.build_date}</p> {/* Display release cycle */}
-  <a href={phone.telegramLink}>Telegram</a> | <a href={phone.githubLink}>GitHub</a>
+  <a href={phone.telegramlink}>Telegram</a> | <a href={phone.githublink}>GitHub</a>
 </div>
 
 
