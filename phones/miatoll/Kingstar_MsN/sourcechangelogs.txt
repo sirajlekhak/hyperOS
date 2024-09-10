@@ -1,0 +1,23 @@
+Source Changelogs for POCO M2 Pro / Redmi Note 9 Series (curtana/joyeuse/excalibur/gram) - Version OS.1.0.5.0
+
+Build Date: 07.09.2024
+Maintainer: Kɪŋʛstʌʀ Mʋsɪŋ Mʌɭɪk 🇮🇳
+
+Source-Level Changes:
+- Merged AOSP upstream changes up to September 2024.
+- Applied kernel-level improvements for enhanced performance.
+- Integrated latest Qualcomm patches for security and stability.
+- Added new custom power-saving profile for extended battery life.
+- Refactored codebase for improved memory management and performance.
+- Resolved minor bugs and deprecated code across system modules.
+- Added support for new third-party apps and system features.
+
+**NOTES**
+• Device is certified  
+• Basic Integrity Passed by default  
+• Clean Flash Recommended  
+• Use any Fbev1 Recovery  
+• First time boot will take at least 3-5 minutes (Be Patient)  
+• Let the ROM settle before reporting any issues  
+• Secure flag added  
+• For dirty flash, try this [link](https://t.me/PortRomsbyMsn/4470) at your own risk
