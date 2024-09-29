@@ -15,12 +15,10 @@ const PhoneBuildPage = () => {
   useEffect(() => {
     const fetchPhone = async () => {
       try {
-        // Fetch phone details from the JSON file
         const response = await fetch('/hyperOS/phones.json'); // Ensure this path is correct
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
 
-        // Find the phone based on the ID in the URL
         const foundPhone = data.phones.find(p => p.id === parseInt(id, 10));
         if (!foundPhone) throw new Error('Phone not found');
 
@@ -28,8 +26,6 @@ const PhoneBuildPage = () => {
 
         if (foundPhone) {
           console.log('Fetching text files for:', foundPhone);
-
-          // Fetch and set text for each of the phone details
           fetchTextFile(`/hyperOS${foundPhone.sourceChangelogs}`, setSourceChangelog);
           fetchTextFile(`/hyperOS${foundPhone.changelogs}`, setChangelog);
           fetchTextFile(`/hyperOS${foundPhone.installationInstructions}`, setInstallationInstructions);
@@ -61,25 +57,28 @@ const PhoneBuildPage = () => {
   return (
     <div className="phone-build-page">
       <h1>{phone.name} - Build Downloads</h1>
+      {/* Display the phone image */}
+      {phone.image && (
+        <img src={phone.image} alt={`${phone.name}`} className="phone-image" />
+      )}
       <div className="phone-info-box">
-  <p><strong>Codename:</strong> {phone.codename}</p>
-  <p><strong>Maintainer:</strong> {phone.maintainer}</p>
-  <p><strong>Version:</strong> {phone.version}</p> {/* Display version */}
-  <p><strong>Build date:</strong> {phone.build_date}</p> {/* Display release cycle */}
-  <p><strong>Status:</strong> {phone.status}</p> 
-  <a href={phone.telegramlink}>Telegram</a> | <a href={phone.githublink}>GitHub</a>
-</div>
-
+        <p><strong>Codename:</strong> {phone.codename}</p>
+        <p><strong>Maintainer:</strong> {phone.maintainer}</p>
+        <p><strong>Version:</strong> {phone.version}</p> {/* Display version */}
+        <p><strong>Build date:</strong> {phone.build_date}</p> {/* Display release cycle */}
+        <p><strong>Status:</strong> {phone.status}</p> 
+        <a href={phone.telegramlink}>Telegram</a> | <a href={phone.githublink}>GitHub</a>
+      </div>
 
       <div className="download-buttons">
-        <a href={phone.recoveryDownload} className="download-button" target="_blank">
+        <a href={phone.recoveryDownload} className="download-button" target="_blank" rel="noopener noreferrer">
           <i className="fas fa-download"></i> Download Recovery
         </a>
-        <a href={phone.romDownload} className="download-button" target="_blank">
+        <a href={phone.romDownload} className="download-button" target="_blank" rel="noopener noreferrer">
           <i className="fas fa-download"></i> Download ROM
         </a>
         {phone.previousRomDownload && (
-          <a href={phone.previousRomDownload} className="download-button" target="_blank">
+          <a href={phone.previousRomDownload} className="download-button" target="_blank" rel="noopener noreferrer">
             <i className="fas fa-download"></i> Download Archive
           </a>
         )}
@@ -109,7 +108,7 @@ const PhoneBuildPage = () => {
       <div className="support-us">
         <h2>Support Us</h2>
         <p>If you'd like to support our work, you can do so via UPI.</p>
-        <a href="upi://pay?pa=crajmusics@oksbi&pn=Siraj_Alam" className="support-button" target="_blank">Donate via UPI</a>
+        <a href="upi://pay?pa=crajmusics@oksbi&pn=Siraj_Alam" className="support-button" target="_blank" rel="noopener noreferrer">Donate via UPI</a>
       </div>
     </div>
   );
