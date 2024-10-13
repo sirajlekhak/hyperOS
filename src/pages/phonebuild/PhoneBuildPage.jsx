@@ -12,7 +12,7 @@ const PhoneBuildPage = () => {
   useEffect(() => {
     const fetchPhone = async () => {
       try {
-        const response = await fetch('http://localhost:3000/phones'); // Adjust to your API endpoint
+        const response = await fetch('https://hyperosbackend.onrender.com/phones'); // Adjust to your API endpoint
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
 
