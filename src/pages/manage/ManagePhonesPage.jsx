@@ -85,7 +85,7 @@ const ManagePhonesPage = () => {
 
     console.log('Submitting phone data:', phoneData);
 
-    const url = isEditing ? `http://localhost:3000/phones/${form.id}` : 'http://localhost:3000/phones';
+    const url = isEditing ? `https://hyperosbackend.onrender.com/phones/${form.id}` : 'https://hyperosbackend.onrender.com/phones';
     const method = isEditing ? 'PUT' : 'POST';
 
     try {
@@ -136,7 +136,7 @@ const ManagePhonesPage = () => {
     if (!confirmDelete) return; // Exit if the user cancels
 
     try {
-      const response = await fetch(`http://localhost:3000/phones/${id}`, {
+      const response = await fetch(`https://hyperosbackend.onrender.com/phones/${id}`, {
         method: 'DELETE',
       });
 
@@ -193,7 +193,7 @@ const ManagePhonesPage = () => {
     formData.append('phones', file);
 
     try {
-      const response = await fetch('http://localhost:3000/upload-phones', {
+      const response = await fetch('https://hyperosbackend.onrender.com/upload-phones', {
         method: 'POST',
         body: formData,
       });
