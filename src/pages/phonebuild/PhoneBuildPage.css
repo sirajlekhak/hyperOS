@@ -10,25 +10,24 @@ body {
   color: #333;
 }
 
-
 .phone-build-page {
   display: flex;
-    flex-direction: column; /* Align elements vertically */
-    justify-content: center; /* Center elements vertically */
-    align-items: center; /* Center elements horizontally */
-    width: 100vw; /* Use viewport width to avoid overflow */
-    height: 100%;
-    padding: 20px;
-    text-align: center; /* Center text */
-    box-sizing: border-box;
-    position: relative; /* Ensure that positioning is relative to this container */
-    overflow: hidden; /* Hide overflow within the main content */
-  }
+  flex-direction: column; /* Align elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  width: 100vw; /* Use viewport width to avoid overflow */
+  height: 100%;
+  padding: 20px;
+  text-align: center; /* Center text */
+  box-sizing: border-box;
+  position: relative; /* Ensure that positioning is relative to this container */
+  overflow: hidden; /* Hide overflow within the main content */
+}
 
-  .phone-build-page h1 {
-    flex-wrap: wrap;
+.phone-build-page h1 {
+  flex-wrap: wrap;
   font-size: 2.5rem;
-  }
+}
 
 /* General Information Boxes */
 .phone-info-box,
@@ -64,7 +63,6 @@ body {
 /* Download Buttons */
 .download-buttons {
   display: flex;
- 
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -125,88 +123,31 @@ body {
   border: 1px solid #e0e0e0; /* Light border */
   border-radius: 12px;
   background-color: #e7f5ff; /* Soft blue background for support section */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .support-us h2 {
   margin: 0 0 10px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333; /* Dark text color */
-}
-
-.support-us p {
-  margin: 0 0 15px;
-  color: #666; /* Lighter text color */
 }
 
 .support-button {
   display: inline-block;
-  padding: 15px 25px;
-  color: #fff; /* White text for button */
-  background-color: #28a745; /* Green for positive action and support */
+  padding: 10px 20px;
+  background-color: #ff5733; /* Bright color for call-to-action */
+  color: white;
   text-decoration: none;
   border-radius: 8px;
-  font-size: 16px;
   font-weight: bold;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
-  transition: background-color 0.3s, transform 0.3s;
 }
 
 .support-button:hover {
-  background-color: #218838; /* Darker green for hover */
-  color: #fff;
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #c70000; /* Darker red for hover effect */
 }
 
-/* Installation Instructions */
-.installation-instructions pre {
-  background-color: #f1f1f1; /* Light gray background */
-  border: 1px solid #dcdcdc; /* Light border */
-  padding: 15px;
-  border-radius: 12px;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
-}
-
-.installation-instructions code {
-  background-color: #e7e7e7; /* Slightly darker gray for code snippets */
-  color: #d63384; /* Highlighted pink for emphasis */
-  padding: 5px;
-  border-radius: 5px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .changelog-info pre, 
-  .installation-instructions pre {
-    font-size: 12px; /* Adjust font size for smaller screens */
-  }
-
-  .download-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .download-button,
-  .support-button {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-
-  .phone-info-box,
-  .status-info {
-    padding: 15px;
-    margin-bottom: 15px;
-  }
-
-  .phone-info-box p,
-  .status-info p {
-    font-size: 14px; /* Adjust font size for smaller screens */
-  }
+/* Phone Image Styling */
+.phone-image {
+  max-width: 100%;
+  height: 20%;
+  border-radius: 12px; /* Rounded corners for the image */
+  margin-bottom: 20px; /* Space below the image */
 }

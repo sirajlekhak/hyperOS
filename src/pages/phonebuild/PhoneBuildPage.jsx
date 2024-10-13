@@ -16,7 +16,8 @@ const PhoneBuildPage = () => {
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
 
-        const foundPhone = data.find(p => p.id === id); // Use string comparison
+        // Find the phone by ID (string comparison)
+        const foundPhone = data.find(p => p.id === id);
         if (!foundPhone) throw new Error('Phone not found');
 
         setPhone(foundPhone);
@@ -35,19 +36,19 @@ const PhoneBuildPage = () => {
   return (
     <div className="phone-build-page">
       <h1>{phone.name} - Build Downloads</h1>
-      {/* Display the phone image */}
-      {phone.image && (
-        <img src={phone.image} alt={`${phone.name}`} className="phone-image" />
-      )}
+      
       <div className="phone-info-box">
         <p><strong>Codename:</strong> {phone.codename}</p>
         <p><strong>Maintainer:</strong> {phone.maintainer}</p>
-        <p><strong>Version:</strong> {phone.version}</p> {/* Display version */}
-        <p><strong>Build date:</strong> {phone.build_date}</p> {/* Display release cycle */}
+        <p><strong>Version:</strong> {phone.version}</p>
+        <p><strong>Build date:</strong> {phone.build_date}</p>
         <p><strong>Status:</strong> {phone.status}</p> 
-        <a href={phone.telegramLink} target="_blank" rel="noopener noreferrer">Telegram</a> | 
-        <a href={phone.githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
+        <div className="social-links">
+  <a href={phone.telegramLink} target="_blank" rel="noopener noreferrer" className="social-link">Telegram</a>
+  <span> | </span>
+  <a href={phone.githubLink} target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
+</div>
+</div>
 
       <div className="download-buttons">
         <a href={phone.recoveryDownload} className="download-button" target="_blank" rel="noopener noreferrer">

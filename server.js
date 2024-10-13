@@ -19,8 +19,8 @@ app.use(fileUpload()); // Enable file upload
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Path to your JSON file
-const phonesFilePath = path.join(__dirname, 'phones.json');
+// Path to your JSON file (in the public directory)
+const phonesFilePath = path.join(__dirname, 'public', 'phones.json');
 
 // Helper function to read phones from JSON file
 const readPhonesFromFile = () => {
@@ -39,7 +39,7 @@ const writePhonesToFile = (phones) => {
 
 // Serve favicon
 app.get('/favicon.ico', (req, res) => {
-  res.sendFile(path.join(__dirname, 'favicon.ico'));
+  res.sendFile(path.join(__dirname, 'public', 'favicon.ico'));
 });
 
 // Default route for root path
@@ -111,14 +111,20 @@ app.delete('/phones/:id', (req, res) => {
   }
 });
 
-// POST endpoint to import phones.json file and replace the existing one
+// Upload and replace phones.json
 app.post('/upload-phones', (req, res) => {
   if (!req.files || !req.files.phones) {
     return res.status(400).send('No file was uploaded.');
   }
 
   const uploadedFile = req.files.phones; // Uploaded file object
-  const filePath = path.join(__dirname, 'phones.json'); // Path to replace phones.json
+
+  // Check for JSON file type
+  if (uploadedFile.mimetype !== 'application/json') {
+    return res.status(400).send('Uploaded file must be a JSON file.');
+  }
+
+  const filePath = phonesFilePath; // Path to replace phones.json
 
   // Move the uploaded file to replace the current phones.json
   uploadedFile.mv(filePath, (err) => {
@@ -134,7 +140,13 @@ app.post('/upload-phones', (req, res) => {
         return res.status(500).send('Failed to read new phones.json');
       }
 
-      res.json(JSON.parse(data)); // Send back the updated data
+      try {
+        const jsonData = JSON.parse(data); // Parse the JSON data
+        res.json(jsonData); // Send back the updated data
+      } catch (jsonError) {
+        console.error('Error parsing new phones.json:', jsonError);
+        return res.status(400).send('Invalid JSON format');
+      }
     });
   });
 });
