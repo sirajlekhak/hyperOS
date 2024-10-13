@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa'; // Importing FaBars icon
@@ -47,6 +48,9 @@ const Navbar = () => {
           <NavLink to="/blog" className={({ isActive }) => (isActive ? 'active' : '')}>
             Blog
           </NavLink>
+          <NavLink to="/manage-phones" className={({ isActive }) => (isActive ? 'active' : '')}>
+            Admin
+          </NavLink> {/* Manage Phones link redirects to login if not logged in */}
         </div>
       ) : (
         <div className="breadcrumb-menu">
@@ -65,6 +69,9 @@ const Navbar = () => {
               <NavLink to="/blog" onClick={() => setIsDropdownOpen(false)} className={({ isActive }) => (isActive ? 'active' : '')}>
                 Blog
               </NavLink>
+              <NavLink to="/manage-phones" onClick={() => setIsDropdownOpen(false)} className={({ isActive }) => (isActive ? 'active' : '')}>
+                Manage Phones
+              </NavLink> {/* Manage Phones in mobile dropdown */}
             </div>
           )}
         </div>

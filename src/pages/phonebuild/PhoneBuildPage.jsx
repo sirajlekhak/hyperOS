@@ -5,9 +5,6 @@ import './PhoneBuildPage.css';
 const PhoneBuildPage = () => {
   const { id } = useParams();
   const [phone, setPhone] = useState(null);
-  const [sourceChangelog, setSourceChangelog] = useState('');
-  const [changelog, setChangelog] = useState('');
-  const [installationInstructions, setInstallationInstructions] = useState('');
   const [toggleSourceChangelog, setToggleSourceChangelog] = useState(false);
   const [toggleChangelog, setToggleChangelog] = useState(false);
   const [toggleInstructions, setToggleInstructions] = useState(false);
@@ -15,35 +12,16 @@ const PhoneBuildPage = () => {
   useEffect(() => {
     const fetchPhone = async () => {
       try {
-        const response = await fetch('/hyperOS/phones.json'); // Ensure this path is correct
+        const response = await fetch('http://localhost:3000/phones'); // Adjust to your API endpoint
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
 
-        const foundPhone = data.phones.find(p => p.id === parseInt(id, 10));
+        const foundPhone = data.find(p => p.id === id); // Use string comparison
         if (!foundPhone) throw new Error('Phone not found');
 
         setPhone(foundPhone);
-
-        if (foundPhone) {
-          console.log('Fetching text files for:', foundPhone);
-          fetchTextFile(`/hyperOS${foundPhone.sourceChangelogs}`, setSourceChangelog);
-          fetchTextFile(`/hyperOS${foundPhone.changelogs}`, setChangelog);
-          fetchTextFile(`/hyperOS${foundPhone.installationInstructions}`, setInstallationInstructions);
-        }
       } catch (error) {
         console.error('Error fetching phone data:', error);
-      }
-    };
-
-    const fetchTextFile = async (filePath, setText) => {
-      try {
-        console.log('Fetching file:', filePath);
-        const response = await fetch(filePath);
-        if (!response.ok) throw new Error('Network response was not ok');
-        const text = await response.text();
-        setText(text);
-      } catch (error) {
-        console.error('Error fetching text file:', error);
       }
     };
 
@@ -67,7 +45,8 @@ const PhoneBuildPage = () => {
         <p><strong>Version:</strong> {phone.version}</p> {/* Display version */}
         <p><strong>Build date:</strong> {phone.build_date}</p> {/* Display release cycle */}
         <p><strong>Status:</strong> {phone.status}</p> 
-        <a href={phone.telegramlink}>Telegram</a> | <a href={phone.githublink}>GitHub</a>
+        <a href={phone.telegramLink} target="_blank" rel="noopener noreferrer">Telegram</a> | 
+        <a href={phone.githubLink} target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
 
       <div className="download-buttons">
@@ -84,25 +63,34 @@ const PhoneBuildPage = () => {
         )}
       </div>
 
+      {/* Source Changelog Section */}
       <div className="changelog-info">
         <button onClick={() => setToggleSourceChangelog(!toggleSourceChangelog)}>
           {toggleSourceChangelog ? 'Hide' : 'Show'} Source Changelog
         </button>
-        {toggleSourceChangelog && <pre>{sourceChangelog || 'No source changelog available.'}</pre>}
+        {toggleSourceChangelog && (
+          <pre>{phone.sourceChangelogs || 'No source changelog available.'}</pre>
+        )}
       </div>
 
+      {/* Changelog Section */}
       <div className="changelog-info">
         <button onClick={() => setToggleChangelog(!toggleChangelog)}>
           {toggleChangelog ? 'Hide' : 'Show'} Changelog
         </button>
-        {toggleChangelog && <pre>{changelog || 'No changelog available.'}</pre>}
+        {toggleChangelog && (
+          <pre>{phone.changelogs || 'No changelog available.'}</pre>
+        )}
       </div>
 
+      {/* Installation Instructions Section */}
       <div className="changelog-info">
         <button onClick={() => setToggleInstructions(!toggleInstructions)}>
           {toggleInstructions ? 'Hide' : 'Show'} Installation Instructions
         </button>
-        {toggleInstructions && <pre>{installationInstructions || 'No instructions available.'}</pre>}
+        {toggleInstructions && (
+          <pre>{phone.installationInstructions || 'No instructions available.'}</pre>
+        )}
       </div>
 
       <div className="support-us">

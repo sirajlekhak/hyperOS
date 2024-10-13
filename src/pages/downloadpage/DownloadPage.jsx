@@ -10,11 +10,16 @@ const DownloadPage = () => {
   useEffect(() => {
     const fetchPhones = async () => {
       try {
-        const response = await fetch('/hyperOS/phones.json');
+        const response = await fetch('http://localhost:3000/phones');
+        if (!response.ok) {
+          throw new Error(`Failed to fetch: ${response.statusText}`);
+        }
+
         const data = await response.json();
-        console.log('Fetched phones:', data); // Debug: Check if data is fetched
-        setPhones(data.phones);
-        setFilteredPhones(data.phones);
+        console.log('Fetched phones:', data);
+        
+        setPhones(data);
+        setFilteredPhones(data);
       } catch (error) {
         console.error('Error fetching phone data:', error);
       }
@@ -51,7 +56,7 @@ const DownloadPage = () => {
           {filteredPhones.map((phone) => (
             <div key={phone.id} className="phone-card">
               <img
-                src={phone.image}  // Directly using the image URL from JSON
+                src={phone.image}
                 alt={phone.name}
                 className="phone-image"
               />

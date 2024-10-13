@@ -6,9 +6,13 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
   min-height: 100vh;
   overflow-y: auto; /* Ensure scrolling when content exceeds viewport */
+  font-family: 'Arial', sans-serif; /* Modern font */
+  background: linear-gradient(135deg, #e2f3f5 30%, #d9e7f2 100%); /* Soft gradient background */
 }
 
+/* Main Container */
 .main {
+  display: flex; /* Ensure flex properties are applied */
   flex-direction: column; /* Align elements vertically */
   justify-content: center; /* Center elements vertically */
   align-items: center; /* Center elements horizontally */
@@ -17,14 +21,15 @@ body {
   padding: 20px;
   text-align: center; /* Center text */
   box-sizing: border-box;
-  position: relative; /* Ensure that positioning is relative to this container */
-
+  position: relative; /* Position relative to this container */
 }
 
 /* Headings */
 .download-page h1 {
   color: rgb(36, 36, 36);
   margin-bottom: 20px;
+  font-size: 2.5rem; /* Larger heading size */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Brand Filter */
@@ -45,6 +50,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .brand-filter button.active {
@@ -57,36 +63,13 @@ body {
   background-color: #005bb5;
   color: #ffffff;
   transform: translateY(-4px); /* Hover lift effect */
-}
-
-/* Responsive Adjustments for Tablets */
-@media (max-width: 768px) {
-  .brand-filter {
-    gap: 10px;
-  }
-
-  .brand-filter button {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-}
-
-/* Responsive Adjustments for Mobile */
-@media (max-width: 546px) {
-  .brand-filter {
-    gap: 8px;
-  }
-
-  .brand-filter button {
-    font-size: 12px;
-    padding: 8px 16px;
-  }
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 /* Phone Grid */
 .phone-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with flexible columns */
+  grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
   gap: 20px; /* Add gap between cards */
   justify-content: center;
 }
@@ -106,10 +89,12 @@ body {
   text-align: left;
   position: relative;
   border: 1px solid #e0d2b0;
+  overflow: hidden; /* Ensures child elements don't overflow */
 }
 
 .phone-card:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Softer shadow on hover */
+  transform: translateY(-5px); /* Slight lift on hover */
 }
 
 .phone-image {
@@ -119,18 +104,23 @@ body {
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 15px;
+  transition: transform 0.3s ease; /* Smooth image scaling */
+}
+
+.phone-image:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
 }
 
 /* Phone Title */
-h2 {
+.phone-name {
   font-size: 1.4rem;
   color: #2b2b2b; /* Softer color */
   margin: 10px 0;
   font-weight: 600;
 }
 
-/* Phone Description */
-p {
+/* Phone Maintainer */
+.phone-maintainer {
   color: #555555;
   font-size: 18px;
   font-weight: 500;
@@ -186,7 +176,7 @@ p {
     grid-template-columns: 1fr; /* 1 column on small screens */
   }
 
-  h2 {
-    font-size: 1.2rem;
+  .phone-name {
+    font-size: 1.2rem; /* Adjust title font size for smaller screens */
   }
 }
