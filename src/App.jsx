@@ -7,7 +7,7 @@ import TeamPage from './pages/teampage/TeamPage';
 import DownloadPage from './pages/downloadpage/DownloadPage';
 import PhoneBuildPage from './pages/phonebuild/PhoneBuildPage';
 import BlogPage from './pages/blog/BlogPage';
-import ManagePhonesPage from './pages/managephones/ManagePhonesPage'; // Import ManagePhonesPage
+import ManagePhonesPage from './pages/manage/ManagePhonesPage'; // Import ManagePhonesPage
 import LoginPage from './components/LoginPage'; // Import LoginPage
 import Footer from './components/footer';
 

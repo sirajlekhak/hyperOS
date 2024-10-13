@@ -31,7 +31,7 @@ const ManagePhonesPage = () => {
   useEffect(() => {
     const fetchPhones = async () => {
       try {
-        const response = await fetch('http://localhost:3000/phones');
+        const response = await fetch('https://hyperosbackend.onrender.com/');
         if (!response.ok) {
           throw new Error(`Failed to fetch phones: ${response.statusText}`);
         }
