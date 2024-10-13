@@ -4,6 +4,7 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fileUpload from 'express-fileupload'; // Import file upload middleware
 
 // Create Express app
 const app = express();
@@ -12,6 +13,7 @@ const PORT = 3000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use(fileUpload()); // Enable file upload
 
 // Get directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -107,6 +109,34 @@ app.delete('/phones/:id', (req, res) => {
     console.error('Error deleting phone:', error);
     res.status(500).json({ error: 'Failed to delete phone' });
   }
+});
+
+// POST endpoint to import phones.json file and replace the existing one
+app.post('/upload-phones', (req, res) => {
+  if (!req.files || !req.files.phones) {
+    return res.status(400).send('No file was uploaded.');
+  }
+
+  const uploadedFile = req.files.phones; // Uploaded file object
+  const filePath = path.join(__dirname, 'phones.json'); // Path to replace phones.json
+
+  // Move the uploaded file to replace the current phones.json
+  uploadedFile.mv(filePath, (err) => {
+    if (err) {
+      console.error('Error replacing phones.json:', err);
+      return res.status(500).send('Failed to replace phones.json');
+    }
+
+    // After successfully replacing the file, send the updated phones data
+    fs.readFile(filePath, 'utf8', (err, data) => {
+      if (err) {
+        console.error('Error reading new phones.json:', err);
+        return res.status(500).send('Failed to read new phones.json');
+      }
+
+      res.json(JSON.parse(data)); // Send back the updated data
+    });
+  });
 });
 
 // Start the server
