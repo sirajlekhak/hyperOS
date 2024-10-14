@@ -12,11 +12,6 @@ const LoginPage = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   
-    // Log values for debugging
-    console.log('Username:', username);
-    console.log('Password:', password);
-    console.log('Expected:', import.meta.env.VITE_ADMIN_USERNAME, import.meta.env.VITE_ADMIN_PASSWORD); // Use import.meta.env
-
     // Use environment variables for authentication
     if (username === import.meta.env.VITE_ADMIN_USERNAME && password === import.meta.env.VITE_ADMIN_PASSWORD) {
       onLogin(); // Call the onLogin function passed as a prop
