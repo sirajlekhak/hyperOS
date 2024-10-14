@@ -70,7 +70,7 @@ const Navbar = () => {
                 Blog
               </NavLink>
               <NavLink to="/manage-phones" onClick={() => setIsDropdownOpen(false)} className={({ isActive }) => (isActive ? 'active' : '')}>
-                Manage Phones
+                Admin
               </NavLink> {/* Manage Phones in mobile dropdown */}
             </div>
           )}
