@@ -31,7 +31,7 @@ const ManagePhonesPage = () => {
   useEffect(() => {
     const fetchPhones = async () => {
       try {
-        const response = await fetch('https://hyperosbackend.onrender.com/phones');
+        const response = await fetch('http://localhost:3000/phones');
         if (!response.ok) {
           throw new Error(`Failed to fetch phones: ${response.statusText}`);
         }
@@ -85,7 +85,7 @@ const ManagePhonesPage = () => {
 
     console.log('Submitting phone data:', phoneData);
 
-    const url = isEditing ? `https://hyperosbackend.onrender.com/phones/${form.id}` : 'https://hyperosbackend.onrender.com/phones';
+    const url = isEditing ? `http://localhost:3000/phones/${form.id}` : 'http://localhost:3000/phones';
     const method = isEditing ? 'PUT' : 'POST';
 
     try {
@@ -133,10 +133,10 @@ const ManagePhonesPage = () => {
 
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm('Are you sure you want to delete this phone?');
-    if (!confirmDelete) return; // Exit if the user cancels
+    if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`https://hyperosbackend.onrender.com/phones/${id}`, {
+      const response = await fetch(`http://localhost:3000/phones/${id}`, {  // Change the URL if necessary
         method: 'DELETE',
       });
 
@@ -149,7 +149,8 @@ const ManagePhonesPage = () => {
     } catch (error) {
       console.error('Error deleting phone:', error);
     }
-  };
+};
+
 
   const resetForm = () => {
     setForm({
@@ -193,7 +194,7 @@ const ManagePhonesPage = () => {
     formData.append('phones', file);
 
     try {
-      const response = await fetch('https://hyperosbackend.onrender.com/upload-phones', {
+      const response = await fetch('http://localhost:3000/upload-phones', {
         method: 'POST',
         body: formData,
       });
