@@ -9,29 +9,36 @@ const PhoneBuildPage = () => {
   const [toggleChangelog, setToggleChangelog] = useState(false);
   const [toggleInstructions, setToggleInstructions] = useState(false);
 
+  const [error, setError] = useState('');
+
   useEffect(() => {
     const fetchPhone = async () => {
       try {
-        const response = await fetch('https://hyperosbackend.onrender.com/phones'); // Adjust to your API endpoint
+        const response = await fetch('/hyperOS/phones.json');
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
-
-        // Find the phone by ID (string comparison)
-        const foundPhone = data.find(p => p.id === id);
+  
+        const foundPhone = data.find(p => p.id.toString() === id);
         if (!foundPhone) throw new Error('Phone not found');
-
+  
         setPhone(foundPhone);
       } catch (error) {
         console.error('Error fetching phone data:', error);
+        setError(error.message); // Set error message in state
       }
     };
-
+  
     fetchPhone();
   }, [id]);
-
+  
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+  
   if (!phone) {
     return <p>Loading phone details...</p>;
   }
+  
 
   return (
     <div className="phone-build-page">
